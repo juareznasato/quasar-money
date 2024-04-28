@@ -1,10 +1,10 @@
 {
   "name": "quasar-money",
-  "version": "0.0.1",
-  "description": "A Quasar Project",
+  "version": "0.0.2",
+  "description": "A quasar money component",
   "productName": "QuasarMoney",
   "author": "“juarez” <“juareznasato@gmail.com”>",
-  "private": true,
+  "private": false,
   "scripts": {
     "lint": "eslint --ext .js,.vue ./",
     "format": "prettier --write \"**/*.{js,vue,scss,html,md,json}\" --ignore-path .gitignore",
