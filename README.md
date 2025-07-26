@@ -2,7 +2,8 @@
 
 ## Project
 
-If you're looking for a Quasar component to format currency values, this might be helpful.
+If you're looking for a Quasar component to format currency values, this might be helpful.  
+It supports both positive and negative numbers. 
 
 ## Links
 
@@ -11,9 +12,10 @@ If you're looking for a Quasar component to format currency values, this might b
 [npm](https://www.npmjs.com/package/quasar-money).
 
 ## Dependencies
-
-- vue3
+```
+- vue-3
 - moment ($ npm install moment --save)
+```
 
 ## Install
 
@@ -40,15 +42,69 @@ export default boot(({ app }) => {
     boot: ["plugin.js"],
 ```
 
+## How to use
+
+### - Money (quasar-money)
+
+```vue
+<template>
+  <div>
+    <quasar-money
+      ref="refQuasarMoney"
+      v-model="value"
+      v-bind:label="'Quasar Money'"
+      v-bind:prefix="'R$'"
+      v-bind:suffix="''"
+      v-bind:disable="false"
+      v-bind:negativeNumber="true"
+      v-bind:properties="quasarMoney.properties"
+      v-bind:options="quasarMoney.options"
+    ></quasar-money>
+  </div>
+</template>
+<script setup>
+import { ref } from "vue";
+
+const refQuasarMoney = ref("");
+let value = ref(1234567890.12);
+
+let quasarMoney = {
+  properties: {
+    dense: true,
+    outlined: true,
+    stackLabel: true,
+    // ...
+    // You can pass any valid "q-input" prop here
+  },
+  options: {
+    locale: "pt-BR",
+    length: 11,
+    precision: 2,
+    empty: null,
+  },
+};
+function focus() {
+  refQuasarMoney.value.focus();
+}
+function select() {
+  refQuasarMoney.value.select();
+}
+</script>
+```
+
 ## Properties (v-bind:properties)
 
 You can pass any valid q-input prop to this component.
 For a full list of available props, refer to the [q-input API](https://quasar.dev/vue-components/input#qinput-api).
 
-Props that contain hyphens (e.g., single-line, background-color) can be used this way:
+Props that contain hyphens (e.g., single-line, background-color) can be used in the following ways:
 
 ```vue
-v-bind:properties="{ 'single-line': true, 'background-color': 'red' }"
+quasarMoney.properties="{ singleLine: true, backgroundColor: 'red' }"
+
+or
+
+quasarMoney.properties="{ 'single-line': true, 'background-color': 'red' }"
 ```
 
 ## Events
@@ -62,42 +118,3 @@ v-bind:properties="{ 'single-line': true, 'background-color': 'red' }"
 | keydown   | KeyboardEvent | Emitted when any key is pressed                       |
 | mousedown | MouseEvent    | Emitted when click is pressed                         |
 | mouseup   | MouseEvent    | Event mouseup                                         |
-
-## How to use
-
-### - Money (quasar-money)
-
-```vue
-<template>
-  <div>
-    <quasar-money
-      v-model="value"
-      v-bind:label="label"
-      v-bind:properties="{
-        prefix: 'R$',
-        readonly: false,
-        disabled: false,
-        outlined: false,
-        clearable: true,
-        placeholder: ' ',
-        ...here you can add others q-input properties...
-      }"
-      v-bind:options="{
-        locale: 'pt-BR',
-        length: 11,
-        precision: 6,
-        empty: null,
-      }"
-    />
-  </div>
-</template>
-<script>
-export default {
-  data: () => ({
-    value: "123456789.00", // 123456789.00 or "123456789.00" or "" or null
-    label: "Money",
-    disabled: false,
-  }),
-};
-</script>
-```

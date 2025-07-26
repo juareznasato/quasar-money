@@ -12,11 +12,17 @@
                 v-model="value"
                 v-bind:label="'Quasar Money'"
                 v-bind:prefix="'R$'"
+                v-bind:suffix="''"
+                v-bind:disable="false"
+                v-bind:negativeNumber="true"
                 v-bind:properties="quasarMoney.properties"
                 v-bind:options="quasarMoney.options"
-                v-bind:negativeNumber="true"
               ></quasar-money>
               v-model value: {{ value }}
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+              <q-btn label="Focus" v-on:click.stop="focus()" />
+              <q-btn label="Select" v-on:click.stop="select()" />
             </div>
           </div>
         </q-scroll-area>
@@ -28,6 +34,7 @@
 <script setup>
 import { ref } from "vue";
 import QuasarMoney from "src/components/QuasarMoney.vue";
+const refQuasarMoney = ref("");
 
 let value = ref(1234567890.12);
 
@@ -36,6 +43,8 @@ let quasarMoney = {
     dense: true,
     outlined: true,
     stackLabel: true,
+    // ...
+    // You can pass any valid "q-input" prop here
   },
   options: {
     locale: "pt-BR",
@@ -44,6 +53,17 @@ let quasarMoney = {
     empty: null,
   },
 };
+
+function focus() {
+  setTimeout(() => {
+    refQuasarMoney.value.focus();
+  }, 500);
+}
+function select() {
+  setTimeout(() => {
+    refQuasarMoney.value.select();
+  }, 500);
+}
 </script>
 
 <style></style>

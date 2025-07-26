@@ -194,8 +194,14 @@ function keyPress($event) {
 }
 
 function focus() {
-  setTimeout(() => {
-    refInput.value.focus();
-  }, 500);
+  refInput.value.focus();
 }
+function select() {
+  refInput.value.select();
+}
+
+defineExpose({
+  focus,
+  select,
+});
 </script>
