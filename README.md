@@ -2,14 +2,15 @@
 
 ## Project
 
-If you're looking for a Quasar component to format currency values, this might be helpful.  
+If you're looking for a Quasar component to format money values, this might be helpful.  
 It supports both positive and negative numbers. 
 
 ## Links
 
 [See Demo here](https://rzfpe.csb.app/).  
 [GitHub](https://github.com/juareznasato/quasar-money).  
-[npm](https://www.npmjs.com/package/quasar-money).
+[npm](https://www.npmjs.com/package/quasar-money).  
+[ko-fi](https://ko-fi.com/juareznasato).  
 
 ## Dependencies
 ```
@@ -36,7 +37,7 @@ export default boot(({ app }) => {
 });
 ```
 
-2- Add in quasar.config.js:
+2- Add plugin.js in quasar.config.js:
 
 ```js
     boot: ["plugin.js"],
@@ -118,3 +119,8 @@ quasarMoney.properties="{ 'single-line': true, 'background-color': 'red' }"
 | keydown   | KeyboardEvent | Emitted when any key is pressed                       |
 | mousedown | MouseEvent    | Emitted when click is pressed                         |
 | mouseup   | MouseEvent    | Event mouseup                                         |
+
+## Support me
+If you enjoy or benefit from my work, your support helps me keep going and creating even more.  
+Please consider starring the repository and buying me a coffee. Every coffee means a lot — thank you for your support!  
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/juareznasato)
