@@ -16,7 +16,7 @@
       v-on:change="$emit('change')"
       v-on:click="$emit('click')"
       v-on:focus="$emit('focus')"
-      v-on:keydown="$emit('keydown')"
+      v-on:keydown="$emit('keydown', $event)"
       v-on:mousedown="$emit('mousedown')"
       v-on:mouseup="$emit('mouseup')"
     >
