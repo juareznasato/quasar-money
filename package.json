@@ -5,6 +5,21 @@
   "productName": "QuasarMoney",
   "author": "“juarez” <“juareznasato@gmail.com”>",
   "private": false,
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "main": "index.js",
+  "keywords": [
+    "vuejs",
+    "quasar",
+    "q-input",
+    "money",
+    "currency",
+    "decimal"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/juareznasato/quasar-money.git"
+  },
   "scripts": {
     "lint": "eslint --ext .js,.vue ./",
     "format": "prettier --write \"**/*.{js,vue,scss,html,md,json}\" --ignore-path .prettierignore",
