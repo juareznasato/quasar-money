@@ -1,13 +1,23 @@
 {
   "name": "quasar-money",
-  "version": "0.0.2",
+  "version": "0.0.11",
   "description": "A quasar money component",
   "productName": "QuasarMoney",
   "author": "“juarez” <“juareznasato@gmail.com”>",
   "private": false,
   "license": "MIT",
   "readmeFilename": "README.md",
-  "main": "index.js",
+  "main": "dist/quasar-money.umd.js",
+  "module": "dist/quasar-money.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/quasar-money.es.js",
+      "require": "./dist/quasar-money.umd.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "vuejs",
     "quasar",
@@ -25,13 +35,11 @@
     "format": "prettier --write \"**/*.{js,vue,scss,html,md,json}\" --ignore-path .prettierignore",
     "test": "echo \"No test specified\" && exit 0",
     "dev": "quasar dev",
-    "build": "quasar build"
+    "build": "vite build"
   },
-  "dependencies": {
-    "@quasar/extras": "^1.16.4",
+  "peerDependencies": {
     "quasar": "^2.6.0",
-    "vue": "^3.0.0",
-    "vue-router": "^4.0.0"
+    "vue": "^3.0.0"
   },
   "devDependencies": {
     "eslint": "^8.10.0",
