@@ -30,7 +30,8 @@
 <script setup>
 // Componente que aplica mascara decimal em valores digitados. Valores positivos e negativos.
 import { ref, computed } from "vue";
-import { QInput as QInputLocal, QIcon as QIconLocal } from "quasar"; // Necessário para que na aplicação consumidora não seja necessário importar QInput e QIcon
+// Necessário para que a aplicação consumidora não precise importar QInput e QIcon
+import { QInput as QInputLocal, QIcon as QIconLocal } from "quasar";
 
 const emit = defineEmits([
   "update:modelValue",

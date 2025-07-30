@@ -1,0 +1,6 @@
+$ npm view nome-do-pacote versions
+$ npm login
+$ npm pack
+$ npm run build
+$ npm publish
+$ npm unpublish quasar-money@0.0.2
