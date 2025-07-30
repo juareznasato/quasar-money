@@ -1,6 +1,6 @@
 <template>
   <div>
-    <q-input
+    <q-input-local
       ref="refInput"
       v-model="compModel"
       v-bind:label="label"
@@ -21,15 +21,16 @@
       v-on:mouseup="$emit('mouseup')"
     >
       <template v-slot:append v-if="props.negativeNumber">
-        <q-icon name="exposure" v-on:click.stop="changeSignal()" />
+        <q-icon-local name="exposure" v-on:click.stop="changeSignal()" />
       </template>
-    </q-input>
+    </q-input-local>
   </div>
 </template>
 
 <script setup>
 // Componente que aplica mascara decimal em valores digitados. Valores positivos e negativos.
 import { ref, computed } from "vue";
+import { QInput as QInputLocal, QIcon as QIconLocal } from "quasar"; // Necessário para que na aplicação consumidora não seja necessário importar QInput e QIcon
 
 const emit = defineEmits([
   "update:modelValue",
